@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>hangman  game final project</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+
+  <div class="container1">
+    <div class=glass>
+      <h1>Hangman</h1>
+
+      <canvas id="hangmanCanvas" width="300" height="150"></canvas>
+
+      <p id="phrase">Phrase: _ _ _ _ _</p>
+    </div>
+    <div>
+
+      <br>
+
+      <input type="text" id="guessInput" maxlength="1" placeholder="Enter a letter">
+
+      <button onclick="game.guessLetter(document.getElementById('guessInput').value)">Guess </button>
+
+      <button id="resetGame">Reset</button>
+    </div>
+
+    <br>
+
+    <p class="guessed">Guessed Letters: <span id="guessedLetters"></span></p>
+
+    <p class="wrong">Wrong Guesses: <span id="wrongGuesses"></span></p>
+
+    <p class="attempts">Attempts Left: <span id="attemptsLeft"></span></p>
+
+  </div>
+
+  <script src="hangman.js"></script>
+
+  <script>
+    document.getElementById("guessInput").addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        game.guessLetter(this.value);
+      }
+    });
+  </script>
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
